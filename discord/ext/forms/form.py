@@ -218,7 +218,7 @@ class Form:
         for n, q in enumerate(self._questions):
             embed=discord.Embed(description=q['question'], color=self.color)
 
-            embed.set_author(name=f"{self.title}: {n+1}/{len(self._questions)}", icon_url=self._bot.user.avatar_url)
+            embed.set_author(name=f"{self.title}: {n+1}/{len(self._questions)}", icon_url=self._bot.user.avatar.url or self._bot.user.default_avatar.url)
 
             if self.color:
                 embed.color=self.color
@@ -432,7 +432,7 @@ class NaiveForm(Form):
 
         for n, q in enumerate(self._questions.values()):
             embed=discord.Embed(description=q['question'], color=self.color)
-            embed.set_author(name=f"{self.title}: {n+1}/{len(self._questions)}", icon_url=self._bot.user.avatar_url)
+            embed.set_author(name=f"{self.title}: {n+1}/{len(self._questions)}", icon_url=self._bot.user.avatar.url or self._bot.user.default_avatar.url)
             if self.color:
                 embed.color=self.color
             elist.append(embed)
