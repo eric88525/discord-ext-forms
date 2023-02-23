@@ -3,4 +3,4 @@ Sphinx==3.5.4
 numpydoc
 discord.ext.forms
 discord.py
-emoji
+emoji==1.6.3
